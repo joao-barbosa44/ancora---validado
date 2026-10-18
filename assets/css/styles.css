@@ -513,28 +513,6 @@ tbody td { padding: 12px 14px; font-size: 13.5px; color: var(--text); }
 }
 .tab-btn.active { background: var(--white); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
 
-/* IA SPECIFIC */
-.ai-score {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  font-family: 'Sora', sans-serif;
-}
-.ai-score-val { font-size: 22px; font-weight: 800; line-height: 1; }
-.ai-score-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; }
-.ai-score.low { background: var(--green-pale); color: #065F46; border: 3px solid #A7F3D0; }
-.ai-score.medium { background: var(--amber-pale); color: #92400E; border: 3px solid #FDE68A; }
-.ai-score.critical { background: var(--red-pale); color: #991B1B; border: 3px solid #FECACA; }
-
-.nlp-tag {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 4px 10px; border-radius: 6px;
-  font-size: 12px; font-weight: 600; margin: 3px;
-}
-.nlp-tag.negative { background: #FEE2E2; color: #B91C1C; }
-.nlp-tag.positive { background: var(--green-pale); color: #065F46; }
-.nlp-tag.neutral { background: var(--gray-100); color: var(--gray-600); }
-
 /* FREQUENCY GRID */
 .freq-grid {
   display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-top: 8px;
@@ -584,28 +562,6 @@ tbody td { padding: 12px 14px; font-size: 13.5px; color: var(--text); }
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 10px; }
-
-/* HEALTH BAR */
-.school-health {
-  display: flex; align-items: center; gap: 20px;
-  padding: 20px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-3));
-  border-radius: var(--radius-lg);
-  color: white; margin-bottom: 24px;
-}
-.health-score {
-  font-family: 'Sora', sans-serif; font-size: 52px; font-weight: 800;
-  line-height: 1; color: var(--amber-light);
-}
-.health-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.6; margin-bottom: 6px; }
-.health-desc { font-size: 15px; font-weight: 600; opacity: 0.9; }
-.health-sub { font-size: 12px; opacity: 0.5; margin-top: 4px; }
-.health-bars { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-.health-bar-item { display: flex; align-items: center; gap: 10px; font-size: 12px; opacity: 0.75; }
-.health-bar-item .h-label { width: 100px; }
-.health-bar-item .h-bar { flex: 1; height: 5px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
-.health-bar-item .h-fill { height: 100%; border-radius: 10px; }
-.health-bar-item .h-val { width: 30px; text-align: right; font-weight: 700; }
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
@@ -769,9 +725,7 @@ tbody td { padding: 12px 14px; font-size: 13.5px; color: var(--text); }
   .page-content { padding: 18px 16px; }
   .stats-grid { grid-template-columns: 1fr; }
   .grid-2, .grid-3, .grid-cols-3-1, .grid-cols-1-2 { grid-template-columns: 1fr; }
-  .school-health, .portal-header { flex-direction: column; align-items: flex-start; }
-  .school-health > div[style*="width:1px"] { display: none; }
-  .health-bars { width: 100%; }
+  .portal-header { flex-direction: column; align-items: flex-start; }
   .portal-stats { grid-template-columns: 1fr; }
   .login-card { width: min(420px, calc(100vw - 32px)); padding: 34px 24px; }
   .page-header { align-items: flex-start; }

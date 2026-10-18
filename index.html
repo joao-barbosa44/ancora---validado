@@ -161,67 +161,31 @@
     <div class="page-content">
       <!-- ═══════════════ DASHBOARD ═══════════════ -->
       <div id="view-dashboard" class="view active">
-        <!-- HEALTH BANNER -->
-        <div class="school-health">
-          <div>
-            <div class="health-label">Saúde Escolar Geral</div>
-            <div class="health-score">74</div>
-            <div class="health-desc">⚠️ Atenção Necessária</div>
-            <div class="health-sub">Escola Municipal Prof. Antenor · 2025</div>
-          </div>
-          <div style="width:1px; height:80px; background:rgba(255,255,255,0.1);"></div>
-          <div class="health-bars">
-            <div class="health-bar-item">
-              <span class="h-label">Frequência</span>
-              <div class="h-bar"><div class="h-fill" style="width:88%;background:var(--green)"></div></div>
-              <span class="h-val">88%</span>
-            </div>
-            <div class="health-bar-item">
-              <span class="h-label">Desempenho</span>
-              <div class="h-bar"><div class="h-fill" style="width:71%;background:var(--amber)"></div></div>
-              <span class="h-val">7.1</span>
-            </div>
-            <div class="health-bar-item">
-              <span class="h-label">Bem-estar</span>
-              <div class="h-bar"><div class="h-fill" style="width:64%;background:var(--orange)"></div></div>
-              <span class="h-val">64%</span>
-            </div>
-            <div class="health-bar-item">
-              <span class="h-label">Engajamento</span>
-              <div class="h-bar"><div class="h-fill" style="width:79%;background:var(--blue-light)"></div></div>
-              <span class="h-val">79%</span>
-            </div>
-          </div>
-          <div style="margin-left:auto;">
-            <canvas id="healthDonut" width="110" height="110"></canvas>
-          </div>
-        </div>
-
         <!-- STATS -->
         <div class="stats-grid">
           <div class="stat-card blue">
             <div class="stat-label">Total de Alunos</div>
-            <div class="stat-value">328</div>
-            <div class="stat-meta"><span class="badge-up">↑ 12</span> vs ano anterior</div>
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-meta">alunos cadastrados</div>
             <div class="stat-icon">🎓</div>
           </div>
           <div class="stat-card red">
             <div class="stat-label">Risco Crítico</div>
-            <div class="stat-value">14</div>
-            <div class="stat-meta"><span class="badge-down">↑ 3</span> esta semana</div>
+            <div class="stat-value" id="stat-critico">0</div>
+            <div class="stat-meta">alunos com status crítico</div>
             <div class="stat-icon">🚨</div>
           </div>
           <div class="stat-card amber">
             <div class="stat-label">Atenção Moderada</div>
-            <div class="stat-value">37</div>
-            <div class="stat-meta"><span class="badge-down">↑ 5</span> este mês</div>
+            <div class="stat-value" id="stat-moderado">0</div>
+            <div class="stat-meta">alunos com status moderado</div>
             <div class="stat-icon">⚠️</div>
           </div>
           <div class="stat-card green">
-            <div class="stat-label">Faltas Hoje</div>
-            <div class="stat-value">21</div>
-            <div class="stat-meta">6.4% de ausência</div>
-            <div class="stat-icon">📅</div>
+            <div class="stat-label">Encaminhamentos em Aberto</div>
+            <div class="stat-value" id="stat-enc">0</div>
+            <div class="stat-meta">pendentes ou em andamento</div>
+            <div class="stat-icon">🔀</div>
           </div>
         </div>
 
@@ -255,14 +219,6 @@
                 </div>
                 <div class="alert-time">2h</div>
               </div>
-              <div class="alert-item critical" onclick="showView('alertas')">
-                <div class="alert-dot critical"></div>
-                <div class="alert-content">
-                  <div class="alert-title">NLP: Termos sensíveis detectados</div>
-                  <div class="alert-desc">"Isolado", "agressivo" — observações Prof. Carla, T. 8A.</div>
-                </div>
-                <div class="alert-time">5h</div>
-              </div>
               <div class="alert-item medium" onclick="showView('alertas')">
                 <div class="alert-dot medium"></div>
                 <div class="alert-content">
@@ -271,45 +227,11 @@
                 </div>
                 <div class="alert-time">1d</div>
               </div>
-              <div class="alert-item low" onclick="showView('alertas')">
-                <div class="alert-dot low"></div>
-                <div class="alert-content">
-                  <div class="alert-title">Padrão Incomum Detectado</div>
-                  <div class="alert-desc">3 alunos da Turma 7C com queda simultânea.</div>
-                </div>
-                <div class="alert-time">2d</div>
-              </div>
               <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="showView('alertas')">Ver todos os alertas →</button>
             </div>
           </div>
         </div>
 
-        <!-- TURMAS RANKING + PIE -->
-        <div class="grid-2" style="margin-top:20px">
-          <div class="card">
-            <div class="card-header">
-              <div><h3>Ranking de Turmas — Índice de Risco</h3>
-              <div class="card-subtitle">Menor pontuação = maior atenção necessária</div></div>
-            </div>
-            <div class="card-body">
-              <div id="turmaRanking"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <div><h3>Distribuição de Risco</h3>
-              <div class="card-subtitle">Situação atual dos 328 alunos</div></div>
-            </div>
-            <div class="card-body" style="display:flex;align-items:center;justify-content:center;gap:24px">
-              <canvas id="riskPie" width="180" height="180"></canvas>
-              <div style="display:flex;flex-direction:column;gap:8px">
-                <div style="display:flex;align-items:center;gap:8px"><div style="width:12px;height:12px;border-radius:50%;background:var(--green)"></div><span style="font-size:13px">Normal (277)</span></div>
-                <div style="display:flex;align-items:center;gap:8px"><div style="width:12px;height:12px;border-radius:50%;background:var(--amber)"></div><span style="font-size:13px">Moderado (37)</span></div>
-                <div style="display:flex;align-items:center;gap:8px"><div style="width:12px;height:12px;border-radius:50%;background:var(--red)"></div><span style="font-size:13px">Crítico (14)</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- ═══════════════ ALUNOS ═══════════════ -->
@@ -351,7 +273,7 @@
               <thead>
                 <tr>
                   <th>Aluno</th><th>Turma</th><th>Matrícula</th><th>Frequência</th>
-                  <th>Média</th><th>Índice IA</th><th>Status</th><th>Ações</th>
+                  <th>Média</th><th>Status</th><th>Ações</th>
                 </tr>
               </thead>
               <tbody id="alunosTable"></tbody>
@@ -374,7 +296,7 @@
           <div class="table-wrapper">
             <table>
               <thead>
-                <tr><th>Professor</th><th>Disciplina</th><th>Turmas</th><th>Alertas Gerados</th><th>Último Registro</th><th>Ações</th></tr>
+                <tr><th>Professor</th><th>Disciplina</th><th>Turmas</th><th>Último Registro</th><th>Ações</th></tr>
               </thead>
               <tbody id="professoresTable"></tbody>
             </table>
@@ -734,7 +656,7 @@
 <div class="modal-overlay" id="modal-observacao">
   <div class="modal">
     <div class="modal-title">💬 Observação Comportamental</div>
-    <div class="modal-sub">Análise qualitativa processada por NLP</div>
+    <div class="modal-sub">Registro qualitativo do comportamento do aluno em sala</div>
     <div class="form-grid">
       <div class="form-group"><label class="form-label">Aluno *</label><select class="form-select" id="o-aluno"></select></div>
       <div class="form-group"><label class="form-label">Observação *</label>
@@ -744,12 +666,8 @@
         <select class="form-select" id="o-prio"><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option></select>
       </div>
     </div>
-    <div id="nlpPreview" style="display:none;margin-top:12px;padding:12px;background:var(--amber-pale);border-radius:10px;font-size:13px;color:#92400E">
-      <strong>⚡ IA Detectou:</strong> <span id="nlpPreviewText"></span>
-    </div>
     <div class="modal-actions">
       <button class="btn btn-ghost" onclick="closeModal('modal-observacao')">Cancelar</button>
-      <button class="btn btn-amber" onclick="analyzeObservacao()">🧠 Analisar com IA</button>
       <button class="btn btn-primary" onclick="saveObservacao()">💾 Salvar</button>
     </div>
   </div>

@@ -15,19 +15,19 @@ const DB = {
     {id:10,nome:"Sofia Barbosa",turma:"9A",mat:"2024010",nasc:"2011-06-14",resp:"Antônio Barbosa",tel:"(15)98765-0123",freq:97,media:9.5,risco:"normal",obs:""},
   ],
   professores: [
-    {id:1,nome:"Carla Mendes",disciplina:"Matemática",email:"carla@escola.br",reg:"REG001",turmas:["8A","8B","9A"],alertas:5,ultimo:"Hoje"},
-    {id:2,nome:"Paulo Andrade",disciplina:"Português",email:"paulo@escola.br",reg:"REG002",turmas:["7A","7C","8A"],alertas:3,ultimo:"Ontem"},
-    {id:3,nome:"Marina Ramos",disciplina:"Ciências",email:"marina@escola.br",reg:"REG003",turmas:["6A","6B","7A"],alertas:2,ultimo:"Há 2 dias"},
-    {id:4,nome:"José Teixeira",disciplina:"História",email:"jose@escola.br",reg:"REG004",turmas:["8B","9A"],alertas:1,ultimo:"Há 3 dias"},
+    {id:1,nome:"Carla Mendes",disciplina:"Matemática",email:"carla@escola.br",reg:"REG001",turmas:["8A","8B","9A"],ultimo:"Hoje"},
+    {id:2,nome:"Paulo Andrade",disciplina:"Português",email:"paulo@escola.br",reg:"REG002",turmas:["7A","7C","8A"],ultimo:"Ontem"},
+    {id:3,nome:"Marina Ramos",disciplina:"Ciências",email:"marina@escola.br",reg:"REG003",turmas:["6A","6B","7A"],ultimo:"Há 2 dias"},
+    {id:4,nome:"José Teixeira",disciplina:"História",email:"jose@escola.br",reg:"REG004",turmas:["8B","9A"],ultimo:"Há 3 dias"},
   ],
   turmas: [
-    {id:1,nome:"6A",serie:"6º Ano",turno:"Matutino",sala:"Sala 01",alunos:32,saude:82},
-    {id:2,nome:"6B",serie:"6º Ano",turno:"Vespertino",sala:"Sala 02",alunos:30,saude:75},
-    {id:3,nome:"7A",serie:"7º Ano",turno:"Matutino",sala:"Sala 05",alunos:35,saude:88},
-    {id:4,nome:"7C",serie:"7º Ano",turno:"Vespertino",sala:"Sala 07",alunos:29,saude:64},
-    {id:5,nome:"8A",serie:"8º Ano",turno:"Matutino",sala:"Sala 09",alunos:33,saude:58},
-    {id:6,nome:"8B",serie:"8º Ano",turno:"Vespertino",sala:"Sala 10",alunos:31,saude:71},
-    {id:7,nome:"9A",serie:"9º Ano",turno:"Matutino",sala:"Sala 12",alunos:38,saude:91},
+    {id:1,nome:"6A",serie:"6º Ano",turno:"Matutino",sala:"Sala 01",alunos:32},
+    {id:2,nome:"6B",serie:"6º Ano",turno:"Vespertino",sala:"Sala 02",alunos:30},
+    {id:3,nome:"7A",serie:"7º Ano",turno:"Matutino",sala:"Sala 05",alunos:35},
+    {id:4,nome:"7C",serie:"7º Ano",turno:"Vespertino",sala:"Sala 07",alunos:29},
+    {id:5,nome:"8A",serie:"8º Ano",turno:"Matutino",sala:"Sala 09",alunos:33},
+    {id:6,nome:"8B",serie:"8º Ano",turno:"Vespertino",sala:"Sala 10",alunos:31},
+    {id:7,nome:"9A",serie:"9º Ano",turno:"Matutino",sala:"Sala 12",alunos:38},
   ],
   disciplinas: [
     {id:1,nome:"Matemática",turma:"8A",profId:1,ch:5,ano:"2025",area:"Matemática"},
@@ -52,10 +52,10 @@ const DB = {
     {id:8,alunoId:7,aluno:"Gabriel Alves",turma:"6A",disciplina:"Matemática",tipo:"Prova",nota:5.8,bim:"2º Bimestre",data:"2025-05-04",var:-1.0},
   ],
   observacoes: [
-    {id:1,alunoId:1,aluno:"Lucas Ferreira",texto:"O aluno está cada vez mais isolado em sala. Não interage com os colegas e parece triste e desmotivado.",prio:"high",data:"2025-05-10",termos:["isolado","triste","desmotivado"],prof:"Carla Mendes"},
-    {id:2,alunoId:5,aluno:"Rafael Santos",texto:"Rafael apresentou comportamento agressivo durante a aula de hoje, xingando colega e recusando seguir orientações.",prio:"high",data:"2025-05-08",termos:["agressivo"],prof:"Paulo Andrade"},
-    {id:3,alunoId:9,aluno:"Mateus Carvalho",texto:"Notei que o Mateus parece bem triste ultimamente e desmotivado. Perguntei se estava bem e desconversou.",prio:"medium",data:"2025-05-06",termos:["triste","desmotivado"],prof:"Marina Ramos"},
-    {id:4,alunoId:2,aluno:"Ana Souza",texto:"Ana faltou novamente sem aviso. Quando presente, demonstra cansaço excessivo e falta de atenção.",prio:"medium",data:"2025-05-04",termos:[],prof:"José Teixeira"},
+    {id:1,alunoId:1,aluno:"Lucas Ferreira",texto:"O aluno está cada vez mais isolado em sala. Não interage com os colegas e parece triste e desmotivado.",prio:"high",data:"2025-05-10",prof:"Carla Mendes"},
+    {id:2,alunoId:5,aluno:"Rafael Santos",texto:"Rafael apresentou comportamento agressivo durante a aula de hoje, xingando colega e recusando seguir orientações.",prio:"high",data:"2025-05-08",prof:"Paulo Andrade"},
+    {id:3,alunoId:9,aluno:"Mateus Carvalho",texto:"Notei que o Mateus parece bem triste ultimamente e desmotivado. Perguntei se estava bem e desconversou.",prio:"medium",data:"2025-05-06",prof:"Marina Ramos"},
+    {id:4,alunoId:2,aluno:"Ana Souza",texto:"Ana faltou novamente sem aviso. Quando presente, demonstra cansaço excessivo e falta de atenção.",prio:"medium",data:"2025-05-04",prof:"José Teixeira"},
   ],
   encaminhamentos: [
     {id:1,alunoId:1,aluno:"Lucas Ferreira",tipo:"psico",urgencia:"alta",resp:"Psic. Fernanda Cruz",just:"Queda abrupta de rendimento e sinais de isolamento social.",data:"2025-05-10",status:"Em andamento"},
@@ -73,9 +73,8 @@ const DB = {
   ],
   alertas: [
     {id:1,tipo:"critical",titulo:"Risco Crítico — Lucas Ferreira",desc:"Queda de nota de 9.0 para 4.5 em 3 semanas. Frequência em 58%.",data:"2025-05-10 09:15",lido:false},
-    {id:2,tipo:"critical",titulo:"Termos Sensíveis Detectados — Rafael Santos",desc:"Observações contêm: 'agressivo'. Frequência 45% e média 3.8.",data:"2025-05-09 14:22",lido:false},
+    {id:2,tipo:"critical",titulo:"Comportamento Agressivo Relatado — Rafael Santos",desc:"Observação de professor registra comportamento agressivo. Frequência 45% e média 3.8.",data:"2025-05-09 14:22",lido:false},
     {id:3,tipo:"medium",titulo:"5 Faltas Consecutivas — Ana Souza",desc:"Turma 6B sem justificativas. Média caindo para 6.2.",data:"2025-05-08 11:00",lido:false},
-    {id:4,tipo:"critical",titulo:"Anomalia Coletiva — Turma 7C",desc:"3 alunos com queda simultânea de desempenho e frequência.",data:"2025-05-07 16:30",lido:false},
     {id:5,tipo:"medium",titulo:"Observação Pedagógica — Mateus Carvalho",desc:"Tristeza e desmotivação relatadas. Recomendado acompanhamento.",data:"2025-05-06 09:45",lido:false},
     {id:6,tipo:"low",titulo:"Queda Moderada — Gabriel Alves",desc:"Média caiu 1.0 ponto este bimestre.",data:"2025-05-05 13:00",lido:true},
     {id:7,tipo:"low",titulo:"Frequência Abaixo de 75% — Ana Souza",desc:"Responsável notificado.",data:"2025-05-03 08:30",lido:true},
@@ -111,19 +110,6 @@ let alunosFiltrados = [...DB.alunos];
 const avatarColors = ['td-avatar-blue','td-avatar-green','td-avatar-purple','td-avatar-amber','td-avatar-red'];
 function getAvatarColor(id) { return avatarColors[id % avatarColors.length]; }
 function getInitials(nome) { return nome.split(' ').slice(0,2).map(n=>n[0]).join(''); }
-
-function calcIAIndex(a) {
-  let score = 100;
-  if(a.freq < 70) score -= 30; else if(a.freq < 85) score -= 15;
-  if(a.media < 5) score -= 35; else if(a.media < 7) score -= 15;
-  if(a.obs && /isolado|agressiv|triste|desmotivad/i.test(a.obs)) score -= 20;
-  return Math.max(5, score);
-}
-
-function detectNLP(texto) {
-  const sensivel = ['isolado','isolada','agressiv','triste','desmotivad','chorando','brigou','xingou','desapareceu','recusa','apático','apática','ameaçou','machucou','abusado'];
-  return sensivel.filter(t => texto.toLowerCase().includes(t));
-}
 
 function perm(key) { return RBAC[currentUser.role]?.[key] === true; }
 
@@ -227,7 +213,7 @@ function doLogout() {
 // NAVEGAÇÃO
 // ═══════════════════════════════════════════════════════════
 const viewTitles = {
-  dashboard:        ['Dashboard', 'Visão geral · Saúde Escolar'],
+  dashboard:        ['Dashboard', 'Visão geral da escola'],
   alunos:           ['Gestão de Alunos', 'CRUD completo · Monitoramento individual'],
   professores:      ['Professores', 'Equipe docente'],
   disciplinas:      ['Disciplinas', 'Cadastro e vínculo com turmas e professores'],
@@ -341,28 +327,19 @@ function popularSelects() {
 // DASHBOARD
 // ═══════════════════════════════════════════════════════════
 function renderDashboard() {
-  renderTurmaRanking();
-  setTimeout(() => { createHealthDonut(); createMainChart(); createRiskPie(); }, 50);
+  renderDashboardStats();
+  setTimeout(() => { createMainChart(); }, 50);
 }
 
-function renderTurmaRanking() {
-  const el = document.getElementById('turmaRanking'); if(!el) return;
-  const sorted = [...DB.turmas].sort((a,b) => a.saude - b.saude);
-  el.innerHTML = sorted.map(t => `
-    <div style="margin-bottom:14px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-        <span style="font-size:13px;font-weight:700">${t.nome} · ${t.serie}</span>
-        <span style="font-size:12px;font-weight:700;color:${t.saude<65?'var(--red)':t.saude<80?'var(--amber)':'var(--green)'}">${t.saude}%</span>
-      </div>
-      <div class="progress-bar"><div class="progress-fill ${t.saude<65?'red':t.saude<80?'amber':'green'}" style="width:${t.saude}%"></div></div>
-      <div style="font-size:11px;color:var(--text-muted);margin-top:4px">${t.alunos} alunos · ${t.turno}</div>
-    </div>`).join('');
+function renderDashboardStats() {
+  const alunos = getAlunosVisiveis();
+  const set = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
+  set('stat-total',    alunos.length);
+  set('stat-critico',  alunos.filter(a => a.risco === 'critical').length);
+  set('stat-moderado', alunos.filter(a => a.risco === 'medium').length);
+  set('stat-enc',      DB.encaminhamentos.filter(e => e.status !== 'Encerrado').length);
 }
 
-function createHealthDonut() {
-  const ctx = document.getElementById('healthDonut'); if(!ctx||chartsCreated.healthDonut) return;
-  chartsCreated.healthDonut = new Chart(ctx, { type:'doughnut', data:{ datasets:[{data:[74,26],backgroundColor:['#FCD34D','rgba(255,255,255,0.1)'],borderWidth:0}]}, options:{cutout:'80%',plugins:{legend:{display:false}},responsive:false}});
-}
 function createMainChart() {
   const ctx = document.getElementById('mainChart'); if(!ctx||chartsCreated.mainChart) return;
   chartsCreated.mainChart = new Chart(ctx, {
@@ -373,10 +350,6 @@ function createMainChart() {
     ]},
     options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{family:'Nunito'},boxWidth:12,padding:16}}},scales:{y:{min:60,grid:{color:'rgba(0,0,0,0.05)'}},x:{grid:{display:false}}}}
   });
-}
-function createRiskPie() {
-  const ctx = document.getElementById('riskPie'); if(!ctx||chartsCreated.riskPie) return;
-  chartsCreated.riskPie = new Chart(ctx, { type:'doughnut', data:{labels:['Normal','Moderado','Crítico'],datasets:[{data:[277,37,14],backgroundColor:['#10B981','#F59E0B','#EF4444'],borderWidth:3,borderColor:'#fff'}]}, options:{responsive:false,plugins:{legend:{display:false}}}});
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -397,8 +370,6 @@ function renderAlunos(list) {
     const rl  = a.risco==='critical'?'🔴 Crítico':a.risco==='medium'?'🟡 Moderado':'🟢 Normal';
     const fc  = a.freq<70?'var(--red)':a.freq<85?'var(--amber)':'var(--green)';
     const mc  = a.media<5?'var(--red)':a.media<7?'var(--amber)':'var(--green)';
-    const ia  = calcIAIndex(a);
-    const iac = a.risco==='critical'?'critical':a.risco==='medium'?'medium':'low';
     return `<tr>
       <td><div class="td-name"><div class="td-avatar ${getAvatarColor(a.id)}">${getInitials(a.nome)}</div>
         <div><div style="font-weight:700;font-size:13.5px">${a.nome}</div>
@@ -407,7 +378,6 @@ function renderAlunos(list) {
       <td style="font-size:12px;color:var(--text-muted)">${a.mat}</td>
       <td><span style="font-weight:700;color:${fc}">${a.freq}%</span></td>
       <td><span style="font-weight:700;color:${mc}">${a.media.toFixed(1)}</span></td>
-      <td><div class="ai-score ${iac}" style="width:46px;height:46px"><div class="ai-score-val" style="font-size:15px">${ia}</div><div class="ai-score-label">IDX</div></div></td>
       <td><span class="risk-badge ${rc}">${rl}</span></td>
       <td><div style="display:flex;gap:6px">
         <button class="btn btn-ghost btn-sm btn-icon" onclick="showAlunoDetalhe(${a.id})" title="Ver detalhes">👁️</button>
@@ -415,7 +385,7 @@ function renderAlunos(list) {
         <button class="btn btn-ghost btn-sm btn-icon" style="color:var(--red)" onclick="deleteAluno(${a.id})" title="Excluir">🗑️</button>`:''}
       </div></td>
     </tr>`;
-  }).join('') || '<tr><td colspan="8"><div class="empty-state"><div class="empty-state-icon">🔍</div><p>Nenhum aluno encontrado.</p></div></td></tr>';
+  }).join('') || '<tr><td colspan="7"><div class="empty-state"><div class="empty-state-icon">🔍</div><p>Nenhum aluno encontrado.</p></div></td></tr>';
 }
 
 function filterAlunos(val) {
@@ -478,7 +448,7 @@ function showAlunoDetalhe(id) {
       <div style="margin-left:auto"><span class="risk-badge ${rc}" style="font-size:13px;padding:6px 14px">
         ${a.risco==='critical'?'🔴 Risco Crítico':a.risco==='medium'?'🟡 Atenção Moderada':'🟢 Normal'}</span></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
       <div style="text-align:center;padding:14px;background:var(--gray-50);border-radius:10px">
         <div style="font-family:'Sora',sans-serif;font-size:28px;font-weight:800;color:${a.freq<70?'var(--red)':a.freq<85?'var(--amber)':'var(--green)'}">${a.freq}%</div>
         <div style="font-size:11px;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Frequência</div>
@@ -486,10 +456,6 @@ function showAlunoDetalhe(id) {
       <div style="text-align:center;padding:14px;background:var(--gray-50);border-radius:10px">
         <div style="font-family:'Sora',sans-serif;font-size:28px;font-weight:800;color:${a.media<5?'var(--red)':a.media<7?'var(--amber)':'var(--green)'}">${a.media.toFixed(1)}</div>
         <div style="font-size:11px;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Média Geral</div>
-      </div>
-      <div style="text-align:center;padding:14px;background:var(--gray-50);border-radius:10px">
-        <div style="font-family:'Sora',sans-serif;font-size:28px;font-weight:800;color:var(--blue)">${calcIAIndex(a)}</div>
-        <div style="font-size:11px;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Índice</div>
       </div>
     </div>
     ${notas.length?`<div style="margin-bottom:16px"><div style="font-weight:700;font-size:13px;margin-bottom:8px;color:var(--text-muted)">AVALIAÇÕES RECENTES</div>${notas.slice(0,5).map(n=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100);font-size:13px"><span>${n.disciplina} · ${n.tipo} · ${n.bim}</span><span style="font-weight:700;color:${n.nota<5?'var(--red)':n.nota<7?'var(--amber)':'var(--green)'}">${n.nota}</span></div>`).join('')}</div>`:''}
@@ -517,7 +483,6 @@ function renderProfessores() {
       <div><div style="font-weight:700">${p.nome}</div><div style="font-size:11px;color:var(--text-muted)">${p.email}</div></div></div></td>
     <td><span class="tag blue">${p.disciplina}</span></td>
     <td>${p.turmas.map(t=>`<span class="tag gray" style="margin:1px">${t}</span>`).join('')}</td>
-    <td><span class="tag ${p.alertas>3?'red':p.alertas>1?'amber':'green'}">${p.alertas} alertas</span></td>
     <td style="font-size:12px;color:var(--text-muted)">${p.ultimo}</td>
     <td><div style="display:flex;gap:6px">
       ${canEdit?`<button class="btn btn-ghost btn-sm btn-icon">✏️</button>
@@ -533,7 +498,7 @@ function saveProfessor() {
   if(!perm('editarProfs')) { showToast('Sem permissão.','danger'); return; }
   const nome = document.getElementById('p-nome').value.trim();
   if(!nome) { showToast('Nome é obrigatório!','danger'); return; }
-  DB.professores.push({id:DB.professores.length+1,nome,disciplina:document.getElementById('p-disc').value,email:document.getElementById('p-email').value,reg:document.getElementById('p-reg').value,turmas:[],alertas:0,ultimo:'Hoje'});
+  DB.professores.push({id:DB.professores.length+1,nome,disciplina:document.getElementById('p-disc').value,email:document.getElementById('p-email').value,reg:document.getElementById('p-reg').value,turmas:[],ultimo:'Hoje'});
   closeModal('modal-professor'); renderProfessores(); popularSelects();
   showToast('Professor '+nome+' cadastrado!','success');
 }
@@ -613,15 +578,14 @@ function renderTurmas() {
   const el = document.getElementById('turmasCards'); if(!el) return;
   el.parentElement.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px">${
     DB.turmas.map(t => {
-      const color = t.saude<65?'red':t.saude<80?'amber':'green';
+      const color = 'blue';
       const discs = DB.disciplinas.filter(d=>d.nome && d.turma===t.nome).length;
       return `<div class="card stat-card ${color}" style="cursor:pointer" onclick="showView('alunos');filterAlunosTurma('${t.nome}')">
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
           <div style="font-family:'Sora',sans-serif;font-size:24px;font-weight:800">${t.nome}</div>
-          <span class="tag ${color}">${t.saude}%</span>
         </div>
         <div style="font-size:12px;color:var(--text-muted)">${t.serie} · ${t.turno}</div>
-        <div style="margin:12px 0"><div class="progress-bar"><div class="progress-fill ${color}" style="width:${t.saude}%"></div></div></div>
+        <div style="height:14px"></div>
         <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted)">
           <span>👥 ${t.alunos} alunos</span><span>📚 ${discs} disc.</span><span>${t.sala}</span>
         </div>
@@ -632,7 +596,7 @@ function renderTurmas() {
 function saveTurma() {
   const nome = document.getElementById('t-nome').value.trim();
   if(!nome){ showToast('Nome é obrigatório!','danger'); return; }
-  DB.turmas.push({id:DB.turmas.length+1,nome,serie:document.getElementById('t-serie').value,turno:document.getElementById('t-turno').value,sala:document.getElementById('t-sala').value,alunos:0,saude:100});
+  DB.turmas.push({id:DB.turmas.length+1,nome,serie:document.getElementById('t-serie').value,turno:document.getElementById('t-turno').value,sala:document.getElementById('t-sala').value,alunos:0});
   closeModal('modal-turma'); renderTurmas(); showToast('Turma '+nome+' criada!','success');
 }
 
@@ -782,7 +746,6 @@ function renderObservacoes() {
         <div class="td-avatar ${getAvatarColor(o.alunoId)}" style="width:32px;height:32px">${getInitials(o.aluno)}</div>
         <strong>${o.aluno}</strong>
         <span class="tag ${o.prio==='high'?'red':o.prio==='medium'?'amber':'gray'}">${o.prio==='high'?'Alta':o.prio==='medium'?'Média':'Baixa'}</span>
-        ${o.termos.length?`<div>${o.termos.map(t=>`<span class="nlp-tag negative">⚠️ ${t}</span>`).join('')}</div>`:''}
         <span style="margin-left:auto;font-size:11px;color:var(--text-muted)">${o.prof} · ${o.data}</span>
       </div>
       <div style="font-size:13.5px;color:var(--text);line-height:1.5">"${o.texto}"</div>
@@ -806,20 +769,9 @@ function saveObservacao() {
   const aluno   = DB.alunos.find(a=>a.id===alunoId);
   const texto   = document.getElementById('o-texto').value.trim();
   if(!aluno||!texto){ showToast('Preencha todos os campos!','danger'); return; }
-  const termos  = detectNLP(texto);
-  DB.observacoes.unshift({id:DB.observacoes.length+1,alunoId,aluno:aluno.nome,texto,prio:document.getElementById('o-prio').value,data:new Date().toLocaleDateString('pt-BR'),termos,prof:currentUser.nome});
-  if(termos.length) showToast('⚠️ Termos de atenção detectados: '+termos.join(', '),'warning');
+  DB.observacoes.unshift({id:DB.observacoes.length+1,alunoId,aluno:aluno.nome,texto,prio:document.getElementById('o-prio').value,data:new Date().toLocaleDateString('pt-BR'),prof:currentUser.nome});
   closeModal('modal-observacao'); renderObservacoes(); showToast('Observação salva!','success');
   document.getElementById('o-texto').value='';
-  document.getElementById('nlpPreview').style.display='none';
-}
-
-function analyzeObservacao() {
-  const texto  = document.getElementById('o-texto').value;
-  const termos = detectNLP(texto);
-  const el     = document.getElementById('nlpPreview');
-  if(termos.length){ el.style.display='block'; document.getElementById('nlpPreviewText').innerHTML=termos.map(t=>`<span class="nlp-tag negative">${t}</span>`).join(''); }
-  else { el.style.display='block'; el.style.background='var(--green-pale)'; el.style.color='#065F46'; document.getElementById('nlpPreviewText').textContent='Nenhum termo de atenção detectado ✓'; }
 }
 
 function switchTab(btn,tabId) {
@@ -838,12 +790,17 @@ function populateHistoricoSelect() {
 }
 
 function renderHistoricoChart(alunoId) {
-  alunoId = alunoId || document.getElementById('historicoAlunoSelect')?.value;
+  alunoId = parseInt(alunoId || document.getElementById('historicoAlunoSelect')?.value);
   if(!alunoId) return;
   const ctx = document.getElementById('historicoChart'); if(!ctx) return;
-  if(chartsCreated.historicoChart) chartsCreated.historicoChart.destroy();
-  const dados = [8.2,7.9,8.0,7.5,7.1,6.8,6.4,6.1].map((v)=>+(v+(Math.random()-0.5)*0.8).toFixed(1));
-  chartsCreated.historicoChart = new Chart(ctx,{type:'line',data:{labels:['1ºBim/23','2ºBim/23','3ºBim/23','4ºBim/23','1ºBim/24','2ºBim/24','3ºBim/24','4ºBim/24'],datasets:[{label:'Média',data:dados,borderColor:'var(--blue)',backgroundColor:'rgba(37,99,235,0.08)',fill:true,tension:0.4,pointRadius:6},{label:'Frequência %',data:[96,94,92,90,88,85,82,80].map(v=>+(v+(Math.random()-0.5)*4).toFixed(0)),borderColor:'var(--green)',backgroundColor:'rgba(16,185,129,0.05)',fill:true,tension:0.4,pointRadius:6}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{min:40},x:{grid:{display:false}}}}});
+  if(chartsCreated.historicoChart){ chartsCreated.historicoChart.destroy(); delete chartsCreated.historicoChart; }
+  const bims  = ['1º Bimestre','2º Bimestre','3º Bimestre','4º Bimestre'];
+  const notas = DB.notas.filter(n => n.alunoId === alunoId);
+  const dados = bims.map(b => {
+    const ns = notas.filter(n => n.bim === b);
+    return ns.length ? +(ns.reduce((s,n) => s + n.nota, 0) / ns.length).toFixed(1) : null;
+  });
+  chartsCreated.historicoChart = new Chart(ctx,{type:'line',data:{labels:bims,datasets:[{label:'Média das notas lançadas',data:dados,borderColor:'#2563EB',backgroundColor:'rgba(37,99,235,0.08)',fill:true,tension:0.4,pointRadius:6,spanGaps:true}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{min:0,max:10},x:{grid:{display:false}}}}});
 }
 
 // ═══════════════════════════════════════════════════════════
